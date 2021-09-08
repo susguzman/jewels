@@ -13,6 +13,7 @@ app.use((req, res, next) => {
 
 app.use('/users', routes.users);
 app.use('/categories', routes.categories);
+app.use('/jewels', routes.jewels);
 
 app.listen(port, () => {
   console.log(`I am ready to lisen you in port:${port}`);

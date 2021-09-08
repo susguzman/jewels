@@ -1,10 +1,10 @@
-import * as categoriesService from "../services/categories.service.js";
+import * as jewelsService from "../services/jewels.service.js";
 
 export function getAll(req, res, next) {  
   // Validation area
   const data = {};
 
-  categoriesService.getAll(data, (error, results) => {
+  jewelsService.getAll(data, (error, results) => {
     if (error) {
       console.log(error);
       return res.status(400).send({ success: 0, data: "Bad request" });
@@ -19,10 +19,10 @@ export function getAll(req, res, next) {
 export function get(req, res, next) {  
   // Validation area
   const data = {
-    categoryId: req.params.categoryId,
+    jewelId: req.params.jewelId,
   };
 
-  categoriesService.get(data, (error, results) => {
+  jewelsService.get(data, (error, results) => {
     if (error) {
       console.log(error);
       return res.status(400).send({ success: 0, data: "Bad request" });
@@ -37,12 +37,12 @@ export function get(req, res, next) {
 export function create(req, res, next) {
   // Validation area
   const data = {
-    name: req.body.name,
-    description: req.body.description,
+    link: req.body.link,
+    date: req.body.date,
     categoryId: req.body.categoryId,
   };
   
-  categoriesService.create(data, (error, results) => {
+  jewelsService.create(data, (error, results) => {
     if (error) {
       console.log(error);
       return res.status(400).send({ success: 0, data: "Bad request" });
@@ -57,10 +57,13 @@ export function create(req, res, next) {
 export function update(req, res, next) {
   // Validation area
   const data = {
-    categoryId: req.params.categoryId,
+    jewelId: req.params.jewelId,
+    link: req.body.link,
+    date: req.body.date,
+    categoryId: req.body.categoryId,
   };
 
-  categoriesService.update(data, (error, results) => {
+  jewelsService.update(data, (error, results) => {
     if (error) {
       console.log(error);
       return res.status(400).send({ success: 0, data: "Bad request" });
@@ -75,10 +78,10 @@ export function update(req, res, next) {
 export function remove(req, res, next) {
   // Validation area
   const data = {
-    categoryId: req.params.categoryId,
+    jewelId: req.params.jewelId,
   };
 
-  categoriesService.remove(data, (error, results) => {
+  jewelsService.remove(data, (error, results) => {
     if (error) {
       console.log(error);
       return res.status(400).send({ success: 0, data: "Bad request" });
