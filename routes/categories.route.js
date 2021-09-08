@@ -1,8 +1,7 @@
 import * as categoriesController from "../controllers/categories.controller.js";
-
 import { Router } from "express";
 
-var router = Router();
+const router = Router();
 
 router.get("/", categoriesController.getAll);
 
