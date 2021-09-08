@@ -6,6 +6,11 @@ const port = 3001;
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log('Middleware')
+  next();
+});
+
 app.use('/users', routes.users);
 app.use('/categories', routes.categories);
 

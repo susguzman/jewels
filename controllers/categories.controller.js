@@ -39,6 +39,7 @@ export function create(req, res, next) {
   const data = {
     name: req.body.name,
     description: req.body.description,
+    categoryId: req.params.categoryId,
   };
   
   categoriesService.create(data, (error, results) => {

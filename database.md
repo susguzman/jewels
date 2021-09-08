@@ -3,16 +3,17 @@
 ## Users
 - Firts Name
 - Last Name
-- Email
+- Email (pk)
 - Password
 
 ## Jewels
-- ID
+- Id (pk)
 - Link
 - Date
-- Category_id
+- CategoryId
 
 ## Categories
-- ID
+- Id (pk)
 - Name
 - Description
+- CategoryId (fk)
